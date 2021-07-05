@@ -69,12 +69,13 @@ $("#form_login").submit(function (e) {
       if (res.status !== 0) {
         return layer.msg("登陆失败!");
       }
+      console.log(res);
       layer.msg("登陆成功!");
       console.log(res.token);
       // 将登陆成功的token保存在localStorage中
       localStorage.setItem("token", res.token);
       // 跳转到后台主页
-      location.href = "/index.html";
+      location.href = "/assets/index.html";
     },
   });
 });

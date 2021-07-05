@@ -10,7 +10,7 @@ $.ajaxPrefilter(function (options) {
     };
   }
   // 全局同意挂载complete回调函数
-  opstions.complate = function (res) {
+  options.complate = function (res) {
     if (
       res.responseJSON.status === 1 &&
       res.responseJSON.message === "身份认证失败！"
@@ -18,7 +18,7 @@ $.ajaxPrefilter(function (options) {
       // 强制清空token
       localStorage.removeItem("token");
       // 强制跳转到登录页
-      location.href = "/login.html";
+      location.href = "/assets/login.html";
     }
   };
 });

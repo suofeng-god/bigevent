@@ -11,7 +11,7 @@ $(function () {
         // 清空本地存储的localStorage
         localStorage.removeItem("token");
         // 跳转至登录页面
-        location.href = "/login.html";
+        location.href = "/assets/login.html";
         // 关闭confirm询问框
         layer.close(index);
       }
@@ -33,7 +33,6 @@ function getUserInfo() {
       if (res.status !== 0) {
         return layer.msg("获取用户信息失败!");
       }
-      console.log(res);
       renderAvatar(res.data);
     },
     // 无论成功与否都会最终调用complete回调函数
@@ -47,7 +46,7 @@ function getUserInfo() {
     //   // 强制清空token
     //   localStorage.removeItem("token");
     //   // 强制跳转到登录页
-    //   location.href = "/login.html";
+    //   location.href = "/assets/login.html";
     // }
     // },
   });
